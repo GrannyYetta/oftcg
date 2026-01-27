@@ -17,12 +17,16 @@ This document outlines the guidelines and workflow to follow when contributing t
 
 - `main` is protected: **no direct pushes** allowed. All work goes through PRs.
 - Create a new branch for each issue/feature you work on.
-- Branch naming convention:
-  <type>/<issue-number>-<short-description>
-  Examples:
-  feature/1-initialize-game
-  fix/2-socket-reconnect
-  clean/3-refactor-component
+
+**Branch naming convention:**
+
+- type/issueNumber-shortDescription
+
+**Examples:**
+
+- feature/1-initialize-game
+- fix/2-socket-reconnect
+- clean/3-refactor-component
 
 **Types:**
 
@@ -68,10 +72,17 @@ Anything the reviewer should know.
 ## 4. Commits
 
 - Use the following commit prefixes:
+
+```
   [Feature] Description of feature
   [Fix] Description of bug fix
   [Clean] Refactor / formatting / minor edits
+```
+
 - Examples:
+
+```
   [Feature] Add start game button
   [Fix] Handle socket disconnect edge case
   [Clean] Remove unused imports
+```
