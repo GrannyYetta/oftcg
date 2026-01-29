@@ -1,8 +1,8 @@
-// Create express and scoket.io servers
+// Create express and socket.io servers
 const express = require("express");
 const app = express();
 const expressServer = app.listen(9000, () => {
-  console.log("Express + Socket.IO server running on port 9000");
+  console.log("Server running on port 9000");
 });
 
 const { Server } = require("socket.io");

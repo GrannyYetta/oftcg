@@ -1,1 +1,1 @@
-// DB functions
+import { db } from "./config";
