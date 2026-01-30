@@ -1,18 +1,10 @@
 import { db } from "./config";
-import { ref, get } from "firebase/database";
+import { collection, getDocs } from "firebase/firestore";
 
-export async function getCards() {
-  try {
-    const cardsRef = ref(db, "cards");
-    const snapshot = await get(cardsRef);
-    if (snapshot.exists()) {
-      return snapshot.val();
-    } else {
-      console.log("No cards available");
-      return {};
-    }
-  } catch (error) {
-    console.log("Error fetching cards:", error);
-    return {};
-  }
+export async function getAllCards() {
+  const querySnapshot = await getDocs(collection(db, "cards"));
+  return querySnapshot.docs.map((doc) => ({
+    id: doc.id,
+    ...doc.data(),
+  }));
 }
